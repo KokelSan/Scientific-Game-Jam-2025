@@ -12,14 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3fd68277634101b8714e84d83531db, type: 3}
   m_Name: UISceneTransitionsTableSO
   m_EditorClassIdentifier: 
-  DefaultTransition: 1
-  SpecificTransitions:
-  - FromSceneIndex: 2
-    ToSceneIndex: 1
-    TransitionType: 3
+  DefaultTransition: 3
+  SpecificTransitions: []
   GlobalFromTransitions:
   - SceneIndex: 0
     TransitionType: 0
-  GlobalToTransitions:
-  - SceneIndex: 3
-    TransitionType: 2
+  GlobalToTransitions: []
