@@ -18,6 +18,9 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _inputs = GetComponent<StarterAssetsInputsAdapter>();
+
+        _currentEnergy = UnityEngine.Random.Range((int)StartingEnergyRange.x, (int)StartingEnergyRange.y + 1);
+        GameUIManager.Instance.AddEnergyIcons(_currentEnergy);
     }
 
     public void LookAt(Transform direction, Action onRotationEnded)
@@ -57,7 +60,7 @@ public class Player : MonoBehaviour
     {
         _collectedItemsNb++;
         _currentEnergy -= energyCost;
-
-        Debug.Log($"New item collected! Count = {_collectedItemsNb}");
+        GameUIManager.Instance.RemoveEnergyIcons(energyCost);
+        GameUIManager.Instance.AddItemIcon();
     }
 }

@@ -1,0 +1,67 @@
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+public class GameUIManager : MonoBehaviour
+{
+    public static GameUIManager Instance;
+
+    public GameObject IconPrefab;
+    public Transform EnergyIconsParent;
+    public Transform ItemIconsParent;
+
+    private List<GameObject> EnergyIcons = new List<GameObject>();
+    private List<GameObject> ItemIcons = new List<GameObject>();
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(Instance);
+        }
+
+        Instance = this;
+    }
+
+    public void AddEnergyIcons(int nb)
+    {
+        for (int i = 0; i < nb; i++) 
+        {
+            AddEnergyIcon();
+        }
+    }
+
+    public void RemoveEnergyIcons(int nb)
+    {
+        for (int i = 0; i < nb; i++)
+        {
+            RemoveEnergyIcon();
+        }
+    }
+
+    public void AddEnergyIcon()
+    {
+        GameObject icon = Instantiate(IconPrefab, EnergyIconsParent);
+        EnergyIcons.Add(icon);
+    }
+
+    public void RemoveEnergyIcon()
+    {
+        GameObject icon = EnergyIcons.Last();
+        EnergyIcons.Remove(icon);
+        Destroy(icon);
+    }
+
+    public void AddItemIcon()
+    {
+        GameObject icon = Instantiate(IconPrefab, ItemIconsParent);
+        ItemIcons.Add(icon);
+    }
+
+    public void RemoveItemIcon()
+    {
+        GameObject icon = ItemIcons.Last();
+        ItemIcons.Remove(icon);
+        Destroy(icon);
+    }
+}
