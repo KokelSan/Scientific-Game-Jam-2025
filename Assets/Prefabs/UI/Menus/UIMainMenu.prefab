@@ -186,7 +186,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start
+  m_text: Jouer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -214,7 +214,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 35
-  m_fontSizeBase: 60
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 30
@@ -559,7 +559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: Quitter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -785,27 +785,30 @@ MonoBehaviour:
   - Button: {fileID: 564823791704076355}
     Events:
     - EventType: 1
+      HideMenuOnEvent: 1
+      EventExecutionOrder: 0
       ShowBackWhenOptionsMenuHidden: 0
       SceneLoadingData:
         SceneToLoadIndex: 0
         LoadSceneMode: 0
-      HideMenuOnEvent: 1
   - Button: {fileID: 5494861814394279521}
     Events:
     - EventType: 6
+      HideMenuOnEvent: 1
+      EventExecutionOrder: 0
       ShowBackWhenOptionsMenuHidden: 1
       SceneLoadingData:
         SceneToLoadIndex: 0
         LoadSceneMode: 0
-      HideMenuOnEvent: 1
   - Button: {fileID: 3962166804476546831}
     Events:
     - EventType: 5
+      HideMenuOnEvent: 0
+      EventExecutionOrder: 0
       ShowBackWhenOptionsMenuHidden: 0
       SceneLoadingData:
         SceneToLoadIndex: 3
         LoadSceneMode: 0
-      HideMenuOnEvent: 0
 --- !u!1 &8697742169459138773
 GameObject:
   m_ObjectHideFlags: 0

@@ -189,7 +189,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -375,7 +375,6 @@ MonoBehaviour:
   CharactersToWritePerSecond: 90
   DialogCanvas: {fileID: 6737092012384538903}
   dialogText: {fileID: 6328271768088748326}
-  CloseButton: {fileID: 6223890160340284008}
 --- !u!1 &8921103937311357738
 GameObject:
   m_ObjectHideFlags: 0

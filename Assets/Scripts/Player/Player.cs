@@ -5,9 +5,15 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float RotationDuration = 1.0f;
+    public Vector2 StartingEnergyRange = new Vector2(4, 8);
 
     public StarterAssetsInputsAdapter Inputs => _inputs;
     private StarterAssetsInputsAdapter _inputs;
+
+    public int CurrentEnergy => _currentEnergy;
+    private int _currentEnergy = 5;
+
+    private int _collectedItemsNb;
 
     private void Start()
     {
@@ -45,5 +51,13 @@ public class Player : MonoBehaviour
     public void AddEffect(bool positiveEffect)
     {
         Debug.Log($"Player received a {(positiveEffect ? "positive" : "negative")} effect");
+    }
+
+    public void CollectItem(int energyCost)
+    {
+        _collectedItemsNb++;
+        _currentEnergy -= energyCost;
+
+        Debug.Log($"New item collected! Count = {_collectedItemsNb}");
     }
 }

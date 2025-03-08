@@ -13,10 +13,28 @@ MonoBehaviour:
   m_Name: Dialogs
   m_EditorClassIdentifier: 
   PositiveDialogs:
-  - 'POS1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm'
-  - 'POS2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm'
-  - 'POS3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm'
+  - 'Positive 1:
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+    do eiusm'
+  - 'Positive 2:
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+    do eiusm'
+  - 'Positive 3:
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+    do eiusm'
   NegativeDialogs:
-  - 'NEG1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm'
-  - 'NEG2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm'
-  - 'NEG3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm'
+  - 'Negative 1:
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+    do eiusm'
+  - 'Negative 2:
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+    do eiusm'
+  - 'Negative 3:
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+    do eiusm'

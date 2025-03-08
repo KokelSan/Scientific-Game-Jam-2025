@@ -36,6 +36,7 @@ public class DialogUIManager : MonoBehaviour
     private IEnumerator ShowDialogCoroutine(string dialog, Action onDialogShowed, Action onDialogClosed)
     {
         DialogCanvas.interactable = false;
+        dialogText.text = "";
 
         float t = 0;
         while (t < PanelTransitionDuration) 
@@ -43,9 +44,7 @@ public class DialogUIManager : MonoBehaviour
             DialogCanvas.alpha = Mathf.Lerp(0, 1, t / PanelTransitionDuration);
             t += Time.deltaTime;
             yield return new WaitForEndOfFrame();
-        }
-        
-        dialogText.text = "";
+        }      
 
         foreach (char character in dialog)
         {
