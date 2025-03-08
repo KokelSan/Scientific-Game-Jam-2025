@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogUIManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class DialogUIManager : MonoBehaviour
     public CanvasGroup DialogCanvas;
     public TMP_Text dialogText;
 
-    private Action _onDialogEnded;
+    private Action _onDialogClosed;
 
     private void Awake()
     {
@@ -29,12 +30,13 @@ public class DialogUIManager : MonoBehaviour
     public void ShowDialog(string dialog, Action onDialogShowed, Action onDialogClosed)
     {
         StartCoroutine(ShowDialogCoroutine(dialog, onDialogShowed, onDialogClosed));
-        DialogCanvas.interactable = true;
         Cursor.lockState = CursorLockMode.None;
     }
 
     private IEnumerator ShowDialogCoroutine(string dialog, Action onDialogShowed, Action onDialogClosed)
     {
+        DialogCanvas.interactable = false;
+
         float t = 0;
         while (t < PanelTransitionDuration) 
         {
@@ -51,7 +53,9 @@ public class DialogUIManager : MonoBehaviour
             yield return new WaitForSeconds(1/CharactersToWritePerSecond);
         }
 
-        _onDialogEnded = onDialogClosed;
+        DialogCanvas.interactable = true;
+        _onDialogClosed = onDialogClosed;
+
         onDialogShowed?.Invoke();
     }
 
@@ -60,6 +64,6 @@ public class DialogUIManager : MonoBehaviour
         DialogCanvas.alpha = 0;
         DialogCanvas.interactable = false;
         Cursor.lockState = CursorLockMode.Locked;
-        _onDialogEnded?.Invoke();
+        _onDialogClosed?.Invoke();
     }
 }

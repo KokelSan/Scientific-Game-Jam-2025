@@ -11,8 +11,6 @@ public class NPC : MonoBehaviour
     {
         name = $"NPC {id}";
         _dialog = dialog;
-
-        Debug.Log($"{name} has {(dialog.IsPositive ? "positive" : "negative")} dialog");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,7 +34,7 @@ public class NPC : MonoBehaviour
 
     private void OnDialogShowed() 
     {
-        
+        _player.AddEffect(_dialog.IsPositive);
     }
 
     private void OnDialogClosed()

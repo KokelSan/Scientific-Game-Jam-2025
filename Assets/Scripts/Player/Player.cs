@@ -42,4 +42,8 @@ public class Player : MonoBehaviour
         onRotationEnded?.Invoke();
     }
 
+    public void AddEffect(bool positiveEffect)
+    {
+        Debug.Log($"Player received a {(positiveEffect ? "positive" : "negative")} effect");
+    }
 }
