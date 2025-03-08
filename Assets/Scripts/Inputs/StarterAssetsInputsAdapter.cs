@@ -16,8 +16,8 @@ public class StarterAssetsInputsAdapter : MonoBehaviour
         InputManagerHandlerData.OnSpace += Jump;
         InputManagerHandlerData.OnSprint += Sprint;
 
-        GameManagerHandlerData.OnGameStarted += OnGameStartedOrResumed;
-        GameManagerHandlerData.OnGameResumed += OnGameStartedOrResumed;
+        GameManagerHandlerData.OnGameStarted += RestoreInputs;
+        GameManagerHandlerData.OnGameResumed += RestoreInputs;
         GameManagerHandlerData.OnGamePaused += OnGamePaused;
     }
 
@@ -28,24 +28,29 @@ public class StarterAssetsInputsAdapter : MonoBehaviour
         InputManagerHandlerData.OnSpace -= Jump; 
         InputManagerHandlerData.OnSprint -= Sprint;
 
-        GameManagerHandlerData.OnGameStarted -= OnGameStartedOrResumed;
-        GameManagerHandlerData.OnGameResumed -= OnGameStartedOrResumed;
+        GameManagerHandlerData.OnGameStarted -= RestoreInputs;
+        GameManagerHandlerData.OnGameResumed -= RestoreInputs;
         GameManagerHandlerData.OnGamePaused -= OnGamePaused;
     }
 
-    private void OnGameStartedOrResumed()
+    public void OnGamePaused()
     {
-        enableInputs = true;
-        Cursor.lockState = CursorLockMode.Locked;
+        FreezeInputs();
+        Cursor.lockState = CursorLockMode.None;
     }
 
-    private void OnGamePaused()
+    public void FreezeInputs()
     {
         enableInputs = false;
         _input.move = Vector2.zero;
         _input.look = Vector2.zero;
-        Cursor.lockState = CursorLockMode.None;
     }
+
+    public void RestoreInputs()
+    {
+        enableInputs = true;
+        Cursor.lockState = CursorLockMode.Locked;
+    }    
 
     private void Move(Vector2 input)
     {
