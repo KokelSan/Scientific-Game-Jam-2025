@@ -21,6 +21,7 @@ public class TypingGame : MonoBehaviour
     private bool isGameActive = false; 
 
 
+
     void Start()
     {
         enterButton.onClick.AddListener(CheckInput);
