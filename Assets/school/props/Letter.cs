@@ -10,20 +10,22 @@ public class Letter : MonoBehaviour, IPointerClickHandler
 {
     public TMP_Text letterText;
     public float moveInterval = 0.0001f;
-    public float moveSpeed = 500f;
+    public float moveSpeed = 0.005f;
     private Vector3 targetPosition;
 
     private float lyfeCycle = 1f;
     private float timer = 0f;
+    private RectTransform sizeParent;
 
     void Start()
     {
-        StartCoroutine(MoveTextAtIntervals());        
+        sizeParent = transform.parent as RectTransform;
+        StartCoroutine(MoveTextAtIntervals());    
     }
 
     void Update()
     {
-        letterText.transform.position = Vector3.Lerp(letterText.transform.position, targetPosition, Time.deltaTime * moveSpeed);
+        letterText.rectTransform.position = Vector3.Lerp(letterText.transform.position, targetPosition, Time.deltaTime * moveSpeed);
         
         if(timer < lyfeCycle)
         {
@@ -42,17 +44,13 @@ public class Letter : MonoBehaviour, IPointerClickHandler
 
     void MoveText()
     {
-        float minX = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane)).x;
-        float maxX = Camera.main.ViewportToWorldPoint(new Vector3(1000, 0, Camera.main.nearClipPlane)).x;
+        float maxX = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, Camera.main.nearClipPlane)).x;
+        float maxY = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, Camera.main.nearClipPlane)).y;
 
-        float minY = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane)).y;
-        float maxY = Camera.main.ViewportToWorldPoint(new Vector3(0, 1000, Camera.main.nearClipPlane)).y;
-
-        float randomX = Random.Range(minX, maxX);
-        float randomY = Random.Range(minY, maxY);
+        float randomX = Random.Range(0, sizeParent.rect.width);
+        float randomY = Random.Range(0, sizeParent.rect.height);
 
         targetPosition = new Vector3(randomX, randomY, letterText.transform.position.z);
-        
     }
     IEnumerator MoveTextAtIntervals()
     {

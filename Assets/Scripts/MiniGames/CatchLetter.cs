@@ -17,6 +17,8 @@ public class CatchLetter : MonoBehaviour
     public int counter = 0;
     public TMP_Text DisplayCounter;
 
+    private float spownLetter = 0.5f;
+
     public float lyfeCycleLetter = 10f;
 
     public List<LyfeCycle> lyfeCycles = new List<LyfeCycle>();
@@ -34,18 +36,15 @@ public class CatchLetter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < LetterToInstantiateNb; i++)
-        {
-            Letter letter = Instantiate(LetterPrefab, LettersParent);
-            letter.Initialize(i, ComputeLetter(), lyfeCycleLetter);
-        }
+        StartCoroutine(InitializeLetters());
     }
 
     private string ComputeLetter(){
         return list[UnityEngine.Random.Range(0, list.Count)];
     }
 
-    public void NotifyLetterCaught(Letter letter){
+    public void NotifyLetterCaught(Letter letter)
+    {
         counter++;
         DisplayCounter.text = $"{counter}";
         Destroy(letter.gameObject);
@@ -57,7 +56,19 @@ public class CatchLetter : MonoBehaviour
         Destroy(letter.gameObject);
     }
 
-}
+    IEnumerator InitializeLetters()
+    {
+        for (int i = 0; i < LetterToInstantiateNb; i++)
+        {
+            Letter letter = Instantiate(LetterPrefab, LettersParent);
+            letter.Initialize(i, ComputeLetter(), lyfeCycleLetter);
+            
+            yield return new WaitForSeconds(spownLetter);
+        }
+    }
+    };
+
+
 
 [Serializable]
 public class LyfeCycle 
