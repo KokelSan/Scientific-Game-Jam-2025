@@ -39,6 +39,8 @@ public class CatchLetter : OutlinableItem
 
     protected void StartMiniGame()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         StartCoroutine(InitializeLetters());
     }
 
