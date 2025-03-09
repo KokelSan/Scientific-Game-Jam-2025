@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip AmbianceClip;
     public AudioClip SecondaryAmbianceClip;
     public AudioClip MiniGameClip;
+    public AudioClip EnergyLostClip;
 
     [Header("Parameters")]
     public float FadeDuration = .5f;
@@ -42,6 +43,12 @@ public class AudioManager : MonoBehaviour
         AudioClip clip = list[Random.Range(0, list.Count)];
         SFX_AudioSource.AudioSource.volume = 1;
         SFX_AudioSource.AudioSource.PlayOneShot(clip);
+    }
+
+    public void PlayEnergyLostCLip()
+    {
+        SFX_AudioSource.AudioSource.volume = 1;
+        SFX_AudioSource.AudioSource.PlayOneShot(EnergyLostClip);
     }
 
     public void ResetAmbianceAudio()
