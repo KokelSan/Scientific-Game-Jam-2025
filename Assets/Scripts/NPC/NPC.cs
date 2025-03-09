@@ -30,6 +30,7 @@ public class NPC : MonoBehaviour
     private void StartDialog()
     {        
         DialogUIManager.Instance.ShowDialog(_dialog.Text, OnDialogShowed, OnDialogClosed);
+        AudioManager.Instance.PlayDialogClip(_dialog.IsPositive);
     }
 
     private void OnDialogShowed() 

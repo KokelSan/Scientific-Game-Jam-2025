@@ -200,6 +200,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3651717548318041444, guid: b8a4f9c46f855f64aa963df811d5f321, type: 3}
+      propertyPath: ServicesToInstantiate.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651717548318041444, guid: b8a4f9c46f855f64aa963df811d5f321, type: 3}
       propertyPath: ServicesToInstantiate.Array.data[0]
       value: 
       objectReference: {fileID: 8254714484861509777, guid: 81d23ba61193d1f49bda2d958b18dcc1, type: 3}
@@ -219,6 +223,10 @@ PrefabInstance:
       propertyPath: ServicesToInstantiate.Array.data[4]
       value: 
       objectReference: {fileID: 5606676004263568462, guid: 41ded4a295dc1a6429ae861163961b39, type: 3}
+    - target: {fileID: 3651717548318041444, guid: b8a4f9c46f855f64aa963df811d5f321, type: 3}
+      propertyPath: ServicesToInstantiate.Array.data[5]
+      value: 
+      objectReference: {fileID: 5952837729747958335, guid: 2f45b5512fc681f41bccd74c7a39ba4b, type: 3}
     - target: {fileID: 4596332730214198653, guid: b8a4f9c46f855f64aa963df811d5f321, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

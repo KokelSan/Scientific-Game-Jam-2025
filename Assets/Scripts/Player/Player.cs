@@ -83,6 +83,11 @@ public class Player : MonoBehaviour
         if (_currentEnergy == 0)
         {
             Debug.Log("Game over !");
+            // GameOver audio ?
+        }
+        else
+        {
+
         }
     }
 }
