@@ -29327,6 +29327,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4830303445460751805, guid: 3b4b9b32058264c4da1d622f8edba0c3, type: 3}
+      propertyPath: LaunchDistance
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7509058103386392280, guid: 3b4b9b32058264c4da1d622f8edba0c3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.610001
