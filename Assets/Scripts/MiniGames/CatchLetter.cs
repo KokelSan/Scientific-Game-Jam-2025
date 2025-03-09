@@ -1,13 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using UnityEngine;
 using TMPro;
-using Palmmedia.ReportGenerator.Core.Parser.Analysis;
-using UnityEngine.Rendering;
-using System;
+using UnityEngine;
 
-public class CatchLetter : MonoBehaviour
+
+
+public class CatchLetter : OutlinableItem
 {
     public static CatchLetter Instance;
     public Letter LetterPrefab;
@@ -16,8 +15,15 @@ public class CatchLetter : MonoBehaviour
     public List<string> list = new List<string>(){"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
     public int counter = 0;
     public TMP_Text DisplayCounter;
+    
+    protected bool startMiniGame = false;
+
+    private float spownLetter = 0.5f;
 
     public float lyfeCycleLetter = 10f;
+    public float LaunchDistance = .5f;
+
+    private bool _isLaunching = false;
 
     public List<LyfeCycle> lyfeCycles = new List<LyfeCycle>();
 
@@ -31,13 +37,22 @@ public class CatchLetter : MonoBehaviour
         Instance = this;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    protected void StartMiniGame()
     {
-        for (int i = 0; i < LetterToInstantiateNb; i++)
+        StartCoroutine(InitializeLetters());
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (_player == null) return;
+
+        if (Vector3.Distance(transform.position, _player.transform.position) <= LaunchDistance)
         {
-            Letter letter = Instantiate(LetterPrefab, LettersParent);
-            letter.Initialize(i, ComputeLetter(), lyfeCycleLetter);
+            if (!_isLaunching)
+            {
+                _isLaunching = true;
+                StartMiniGame();
+            }
         }
     }
 
@@ -45,7 +60,8 @@ public class CatchLetter : MonoBehaviour
         return list[UnityEngine.Random.Range(0, list.Count)];
     }
 
-    public void NotifyLetterCaught(Letter letter){
+    public void NotifyLetterCaught(Letter letter)
+    {
         counter++;
         DisplayCounter.text = $"{counter}";
         Destroy(letter.gameObject);
@@ -57,7 +73,19 @@ public class CatchLetter : MonoBehaviour
         Destroy(letter.gameObject);
     }
 
-}
+    IEnumerator InitializeLetters()
+    {
+        for (int i = 0; i < LetterToInstantiateNb; i++)
+        {
+            Letter letter = Instantiate(LetterPrefab, LettersParent);
+            letter.Initialize(i, ComputeLetter(), lyfeCycleLetter);
+            
+            yield return new WaitForSeconds(spownLetter);
+        }
+    }
+    };
+
+
 
 [Serializable]
 public class LyfeCycle 

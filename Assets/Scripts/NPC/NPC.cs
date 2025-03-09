@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class NPC : MonoBehaviour
 {
@@ -30,6 +29,7 @@ public class NPC : MonoBehaviour
     private void StartDialog()
     {        
         DialogUIManager.Instance.ShowDialog(_dialog.Text, OnDialogShowed, OnDialogClosed);
+        AudioManager.Instance.PlayDialogClip(_dialog.IsPositive);
     }
 
     private void OnDialogShowed() 

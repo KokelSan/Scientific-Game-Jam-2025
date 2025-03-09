@@ -64,16 +64,30 @@ public class Player : MonoBehaviour
     {
         if (!positiveEffect)
         {
-            _currentEnergy--;
-            GameUIManager.Instance.RemoveEnergyIcons(1);
+            RemoveEnergy();
         }
     }
 
     public void CollectItem(int energyCost)
     {
         _collectedItemsNb++;
-        _currentEnergy -= energyCost;
-        GameUIManager.Instance.RemoveEnergyIcons(energyCost);
+        RemoveEnergy(energyCost);
         GameUIManager.Instance.AddItemIcon();
+    }
+
+    private void RemoveEnergy(int count = 1)
+    {
+        int clampedCount = count > _currentEnergy ? _currentEnergy : count;
+        _currentEnergy  = _currentEnergy - clampedCount;
+        GameUIManager.Instance.RemoveEnergyIcons(clampedCount);
+        if (_currentEnergy == 0)
+        {
+            Debug.Log("Game over !");
+            // GameOver audio ?
+        }
+        else
+        {
+
+        }
     }
 }
