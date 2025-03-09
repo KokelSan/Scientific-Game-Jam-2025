@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MiniGameLauncher : OutlinableItem
 {
-    // public MiniGame Game;
+    public CatchLetter CatchLetter;
     public float LaunchDistance = .5f;
 
     private bool _isLaunching = false;
@@ -16,13 +16,7 @@ public class MiniGameLauncher : OutlinableItem
             if (!_isLaunching)
             {
                 _isLaunching = true;
-                StartMinigame();
             }
         }
-    }
-
-    private void StartMinigame()
-    {
-        // Game.Launch();
     }
 }

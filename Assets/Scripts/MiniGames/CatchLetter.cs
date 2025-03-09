@@ -7,7 +7,9 @@ using Palmmedia.ReportGenerator.Core.Parser.Analysis;
 using UnityEngine.Rendering;
 using System;
 
-public class CatchLetter : MonoBehaviour
+
+
+public class CatchLetter : OutlinableItem
 {
     public static CatchLetter Instance;
     public Letter LetterPrefab;
@@ -16,10 +18,15 @@ public class CatchLetter : MonoBehaviour
     public List<string> list = new List<string>(){"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
     public int counter = 0;
     public TMP_Text DisplayCounter;
+    
+    protected bool startMiniGame = false;
 
     private float spownLetter = 0.5f;
 
     public float lyfeCycleLetter = 10f;
+    public float LaunchDistance = .5f;
+
+    private bool _isLaunching = false;
 
     public List<LyfeCycle> lyfeCycles = new List<LyfeCycle>();
 
@@ -34,9 +41,28 @@ public class CatchLetter : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
+    {
+
+    }
+
+    protected void StartMiniGame()
     {
         StartCoroutine(InitializeLetters());
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (_player == null) return;
+
+        if (Vector3.Distance(transform.position, _player.transform.position) <= LaunchDistance)
+        {
+            if (!_isLaunching)
+            {
+                _isLaunching = true;
+                StartMiniGame();
+            }
+        }
     }
 
     private string ComputeLetter(){
