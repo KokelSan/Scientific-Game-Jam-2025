@@ -1,10 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using UnityEngine;
 using TMPro;
-using Palmmedia.ReportGenerator.Core.Parser.Analysis;
-using UnityEngine.Rendering;
 using System;
 
 public class CatchLetter : MonoBehaviour
@@ -60,7 +57,7 @@ public class CatchLetter : MonoBehaviour
 }
 
 [Serializable]
-public class LyfeCycle 
+public class LyfeCycle
 {
     public int state = 0;
 

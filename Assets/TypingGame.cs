@@ -7,13 +7,31 @@ using System.Runtime.ExceptionServices;
 using Unity.VisualScripting;
 using JetBrains.Annotations;
 
+[System.Serializable]
+public class Consignes
+{
+    public int state;
+
+    public string consigne;
+    internal string instruction;
+    private int v1;
+    private string v2;
+
+    public Consignes(int v1, string v2)
+    {
+        this.v1 = v1;
+        this.v2 = v2;
+    }
+}
+
 public class TypingGame : MonoBehaviour
 {
     public TMP_Text consigneText; 
     public TMP_InputField inputField;
     public TMP_Text resultText;
     public Button enterButton;
-    Dictionary<int, string> consignes = new Dictionary<int, string>();
+    // PASSER EN LIST VIA CLASSE
+    public List<Consignes> consignes = new List<Consignes>();
 
     public string text;
     private float timeLimit = 100000000000000f;
@@ -26,12 +44,13 @@ public class TypingGame : MonoBehaviour
     {
         enterButton.onClick.AddListener(CheckInput);
 
-        consignes.Add(1, "schrifblokrbsts");
-        consignes.Add(2, "laxydbzwo");
-        consignes.Add(3, "soutien");
-
-        consigneText.text = consignes[1];
-
+        
+        consignes.Add(new Consignes(1, "schrifblokrbsts"));
+        consignes.Add(new Consignes(2, "laxydbzwo" ));
+        consignes.Add(new Consignes(3, "soutien"));
+        
+        
+        consigneText.text = consignes[1].instruction;
         StartGame();
     }
 
