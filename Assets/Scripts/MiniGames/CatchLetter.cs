@@ -1,11 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using UnityEngine;
 using TMPro;
-using Palmmedia.ReportGenerator.Core.Parser.Analysis;
-using UnityEngine.Rendering;
-using System;
+using UnityEngine;
 
 public class CatchLetter : MonoBehaviour
 {
