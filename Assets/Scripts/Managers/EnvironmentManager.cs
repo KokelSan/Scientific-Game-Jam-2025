@@ -17,6 +17,6 @@ public class EnvironmentManager : MonoBehaviour
 
     private void OnGameStarted()
     {
-        DoorAnimator.Play(DoorAnimationStateName);
+        //DoorAnimator.Play(DoorAnimationStateName);
     }
 }
