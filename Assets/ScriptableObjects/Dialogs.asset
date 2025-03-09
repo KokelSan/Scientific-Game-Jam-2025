@@ -13,28 +13,39 @@ MonoBehaviour:
   m_Name: Dialogs
   m_EditorClassIdentifier: 
   PositiveDialogs:
-  - 'Positive 1:
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-    do eiusm'
-  - 'Positive 2:
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-    do eiusm'
-  - 'Positive 3:
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-    do eiusm'
+  - "Etudiant\xB7e:\n\xAB Salut ! Tu vas mieux ? Tiens, mes notes du dernier cours,
+    n\u2019h\xE9site pas \xE0 me dire si quelque chose n\u2019est pas clair ou si
+    tu as des questions. On pourra travailler \xE7a ensemble quand tu t\u2019en sentiras
+    capable. \xBB"
+  - "Etudiant\xB7e:\n\xAB Tu disais que l\u2019environnement impactait ta mani\xE8re
+    de travailler, donc j\u2019ai r\xE9serv\xE9 une salle priv\xE9e \xE0 la biblioth\xE8que
+    pour notre travail de groupe. On sera au calme et on pourra m\xEAme r\xE9gler
+    la luminosit\xE9 si elle est trop forte. \xBB"
+  - "Etudiant\xB7e:\n\xAB Bonjour, j\u2019ai bien re\xE7u votre mail. Il n\u2019y
+    a aucun souci pour vos absences, je vais vous envoyer le support du cours avec
+    quelques pr\xE9cisions et documents. N\u2019h\xE9sitez pas \xE0 me dire si je
+    peux faire en sorte de vous faciliter les choses. \xBB"
+  - "Etudiant\xB7e:\n\xAB Bonjour, j\u2019ai corrig\xE9 votre copie du dernier examen.
+    Malgr\xE9 que vous n\u2019ayez pas pu tout faire, je vois que vous avez compris,
+    les id\xE9es principales sont l\xE0. Je vais le prendre en compte dans la notation.
+    On pourra fonctionner comme cela \xE0 l\u2019avenir, si cela vous convient. \xBB"
   NegativeDialogs:
-  - 'Negative 1:
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-    do eiusm'
-  - 'Negative 2:
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-    do eiusm'
-  - 'Negative 3:
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-    do eiusm'
+  - "Etudiant\xB7e:\n\xAB Ah ! T\u2019es enfin l\xE0 aujourd\u2019hui, \xE7a arrive
+    pas souvent. Avec toutes tes absences, tu penses vraiment que tu vas r\xE9ussir
+    ton ann\xE9e ? En tout cas, comptes pas sur moi pour te filer les cours, t\u2019avais
+    qu\u2019\xE0 \xEAtre l\xE0. \xBB\n"
+  - "Etudiant\xB7e:\n\xAB Apparemment t\u2019as plus de temps pour les examens ?
+    Je comprends pas, t\u2019es pas handicap\xE9\xB7e, t\u2019as rien. C\u2019est
+    de la triche, c\u2019est injuste ! \xBB "
+  - "Etudiant\xB7e:\n\xAB Vu l\u2019aide que tu as pour les cours et les examens,
+    ton dipl\xF4me ne vaudra rien. Tu n\u2019as aucun m\xE9rite. \xBB"
+  - "Etudiant\xB7e:\n\xAB On avait un devoir de groupe \xE0 faire. T\u2019es pas
+    venu\xB7e et on a du tout faire \xE0 ta place. T\u2019es vraiment fain\xE9ant\xB7e,
+    t\u2019as juste la flemme. \xBB"
+  - "Etudiant\xB7e:\n\xAB Votre oral \xE9tait catastrophique, vous n\u2019\xEAtes
+    pas \xE0 votre place ici. C\u2019est \xE0 se demander comment vous avez fait
+    pour en arriver l\xE0. C\u2019est clairement en dehors de vos comp\xE9tences,
+    vous devriez prendre exemple sur vos camarades. \xBB"
+  - "Etudiant\xB7e:\n\xAB Encore vous ? Je vous ai d\xE9j\xE0 dit que l\u2019on ne
+    changerait pas l\u2019examen pour votre petite personne. Si je devais faire \xE7a
+    pour tou\xB7tes les \xE9tudiant\xB7es on s\u2019en sortirait pas ! \xBB"
