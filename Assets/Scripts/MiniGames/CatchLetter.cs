@@ -45,6 +45,7 @@ public class CatchLetter : OutlinableItem
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
+        _player.RemoveEnergy();
         _player.Inputs.FreezeInputs();
 
         DisplayCounter.gameObject.SetActive(true);

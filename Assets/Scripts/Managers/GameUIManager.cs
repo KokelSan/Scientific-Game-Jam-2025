@@ -7,7 +7,8 @@ public class GameUIManager : MonoBehaviour
 {
     public static GameUIManager Instance;
 
-    public GameObject IconPrefab;
+    public GameObject ItemIconPrefab;
+    public GameObject EnergyIconPrefab;
     public CanvasGroup IconsPanel;
     public Transform EnergyIconsParent;
     public Transform ItemIconsParent;
@@ -46,7 +47,7 @@ public class GameUIManager : MonoBehaviour
     {
         for (int i = 0; i < nb; i++) 
         {
-            GameObject icon = Instantiate(IconPrefab, EnergyIconsParent);
+            GameObject icon = Instantiate(EnergyIconPrefab, EnergyIconsParent);            
             EnergyIcons.Add(icon);
         }
     }
@@ -63,7 +64,7 @@ public class GameUIManager : MonoBehaviour
 
     public void AddItemIcon()
     {
-        GameObject icon = Instantiate(IconPrefab, ItemIconsParent);
+        GameObject icon = Instantiate(ItemIconPrefab, ItemIconsParent);
         ItemIcons.Add(icon);
     }
 
@@ -78,5 +79,7 @@ public class GameUIManager : MonoBehaviour
     {
         EndgameQuitButton.transform.parent.gameObject.SetActive(true);
         EndgameQuitButton.onClick.AddListener(GameManagerHandlerData.StopGame);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
