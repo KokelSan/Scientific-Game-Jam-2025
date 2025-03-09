@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameUIManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameUIManager : MonoBehaviour
     public CanvasGroup IconsPanel;
     public Transform EnergyIconsParent;
     public Transform ItemIconsParent;
+    public Button EndgameQuitButton;
 
     private List<GameObject> EnergyIcons = new List<GameObject>();
     private List<GameObject> ItemIcons = new List<GameObject>();
@@ -70,5 +72,11 @@ public class GameUIManager : MonoBehaviour
         GameObject icon = ItemIcons.Last();
         ItemIcons.Remove(icon);
         Destroy(icon);
+    }
+
+    public void ShowGameOverPanel()
+    {
+        EndgameQuitButton.transform.parent.gameObject.SetActive(true);
+        EndgameQuitButton.onClick.AddListener(GameManagerHandlerData.StopGame);
     }
 }

@@ -78,6 +78,7 @@ MonoBehaviour:
   AmbianceClip: {fileID: 8300000, guid: 7e4898607e15b054190683e0475be885, type: 3}
   SecondaryAmbianceClip: {fileID: 8300000, guid: 4c583a38d0e88fb40a1dad09b708f484, type: 3}
   MiniGameClip: {fileID: 8300000, guid: 3ef72d79d0247f441b6d1e8e440f7f4e, type: 3}
+  EnergyLostClip: {fileID: 8300000, guid: 4131f4c432086bf4594b05eac04f54d6, type: 3}
   FadeDuration: 0.5
 --- !u!1001 &873068450115929448
 PrefabInstance:

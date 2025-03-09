@@ -75,19 +75,15 @@ public class Player : MonoBehaviour
         GameUIManager.Instance.AddItemIcon();
     }
 
-    private void RemoveEnergy(int count = 1)
+    public void RemoveEnergy(int count = 1)
     {
         int clampedCount = count > _currentEnergy ? _currentEnergy : count;
         _currentEnergy  = _currentEnergy - clampedCount;
         GameUIManager.Instance.RemoveEnergyIcons(clampedCount);
+        AudioManager.Instance.PlayEnergyLostCLip();
         if (_currentEnergy == 0)
         {
-            Debug.Log("Game over !");
-            // GameOver audio ?
-        }
-        else
-        {
-
+            GameUIManager.Instance.ShowGameOverPanel();
         }
     }
 }
