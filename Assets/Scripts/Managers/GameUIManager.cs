@@ -27,7 +27,8 @@ public class GameUIManager : MonoBehaviour
     {
         for (int i = 0; i < nb; i++) 
         {
-            AddEnergyIcon();
+            GameObject icon = Instantiate(IconPrefab, EnergyIconsParent);
+            EnergyIcons.Add(icon);
         }
     }
 
@@ -35,21 +36,10 @@ public class GameUIManager : MonoBehaviour
     {
         for (int i = 0; i < nb; i++)
         {
-            RemoveEnergyIcon();
+            GameObject icon = EnergyIcons.Last();
+            EnergyIcons.Remove(icon);
+            Destroy(icon);
         }
-    }
-
-    public void AddEnergyIcon()
-    {
-        GameObject icon = Instantiate(IconPrefab, EnergyIconsParent);
-        EnergyIcons.Add(icon);
-    }
-
-    public void RemoveEnergyIcon()
-    {
-        GameObject icon = EnergyIcons.Last();
-        EnergyIcons.Remove(icon);
-        Destroy(icon);
     }
 
     public void AddItemIcon()

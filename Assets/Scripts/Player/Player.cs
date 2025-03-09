@@ -53,7 +53,11 @@ public class Player : MonoBehaviour
 
     public void AddEffect(bool positiveEffect)
     {
-        Debug.Log($"Player received a {(positiveEffect ? "positive" : "negative")} effect");
+        if (!positiveEffect)
+        {
+            _currentEnergy--;
+            GameUIManager.Instance.RemoveEnergyIcons(1);
+        }
     }
 
     public void CollectItem(int energyCost)
