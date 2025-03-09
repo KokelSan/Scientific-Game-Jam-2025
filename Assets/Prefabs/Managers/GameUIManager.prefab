@@ -773,7 +773,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0dc8d8e8951f040af02bc8b6c15266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IconPrefab: {fileID: 3404180381742738739, guid: f82c1223536031948a7b0f5cefd0aa3e, type: 3}
+  ItemIconPrefab: {fileID: 3404180381742738739, guid: f82c1223536031948a7b0f5cefd0aa3e, type: 3}
+  EnergyIconPrefab: {fileID: 3404180381742738739, guid: 3394e85d07569104480d364eb13c7a70, type: 3}
   IconsPanel: {fileID: 2338052067842568236}
   EnergyIconsParent: {fileID: 7109393316711826742}
   ItemIconsParent: {fileID: 445004252523748845}
