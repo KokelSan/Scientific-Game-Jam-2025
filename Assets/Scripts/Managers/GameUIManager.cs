@@ -7,6 +7,7 @@ public class GameUIManager : MonoBehaviour
     public static GameUIManager Instance;
 
     public GameObject IconPrefab;
+    public CanvasGroup IconsPanel;
     public Transform EnergyIconsParent;
     public Transform ItemIconsParent;
 
@@ -21,6 +22,22 @@ public class GameUIManager : MonoBehaviour
         }
 
         Instance = this;
+        IconsPanel.alpha = 0f;
+    }
+
+    private void Start()
+    {
+        GameManagerHandlerData.OnGameStarted += OnGameStarted;
+    }
+
+    private void OnDestroy()
+    {
+        GameManagerHandlerData.OnGameStarted -= OnGameStarted;
+    }
+
+    private void OnGameStarted()
+    {
+        IconsPanel.alpha = 1.0f;
     }
 
     public void AddEnergyIcons(int nb)

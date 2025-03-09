@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 6076938050754486340}
   - component: {fileID: 3744089419353709972}
   - component: {fileID: 2250328305939382920}
+  - component: {fileID: 2338052067842568236}
   m_Layer: 5
   m_Name: EnergyItemsPanel
   m_TagString: Untagged
@@ -281,6 +282,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &2338052067842568236
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4757940066695554992}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6829937488324287716
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0dc8d8e8951f040af02bc8b6c15266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IconsPanel: {fileID: 2338052067842568236}
   IconPrefab: {fileID: 3404180381742738739, guid: f82c1223536031948a7b0f5cefd0aa3e, type: 3}
   EnergyIconsParent: {fileID: 7109393316711826742}
   ItemIconsParent: {fileID: 445004252523748845}

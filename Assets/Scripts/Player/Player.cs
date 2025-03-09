@@ -18,7 +18,16 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _inputs = GetComponent<StarterAssetsInputsAdapter>();
+        GameManagerHandlerData.OnGameStarted += OnGameStarted;        
+    }
 
+    private void OnDestroy()
+    {
+        GameManagerHandlerData.OnGameStarted -= OnGameStarted;
+    }
+
+    private void OnGameStarted()
+    {
         _currentEnergy = UnityEngine.Random.Range((int)StartingEnergyRange.x, (int)StartingEnergyRange.y + 1);
         GameUIManager.Instance.AddEnergyIcons(_currentEnergy);
     }

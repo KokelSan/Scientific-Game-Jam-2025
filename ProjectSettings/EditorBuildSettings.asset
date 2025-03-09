@@ -8,10 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BootScene.unity
     guid: b6c0700fe130ad647b25d66317827206
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenuScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PrototypeScene.unity
     guid: 0a415d2a7672d4a49a95ded87d396587
+  - enabled: 0
+    path: Assets/Scenes/SchoolScene.unity
+    guid: 0369cf865f6b27e4b907182390673693
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: c47e90a6012ad844e9f936c03897c91e
   m_configObjects: {}
