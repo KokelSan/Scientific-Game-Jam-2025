@@ -79,5 +79,7 @@ public class GameUIManager : MonoBehaviour
     {
         EndgameQuitButton.transform.parent.gameObject.SetActive(true);
         EndgameQuitButton.onClick.AddListener(GameManagerHandlerData.StopGame);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
